@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>EXAM</title>
-</head>
-<body>
-<h1>EXAM Questions go here</h1>
-</body>
+    <head>
+        <title id="title">
+            Question
+        </title>
+        <style>
+            div.relative {
+                position: relative;
+                left: 10px;
+                border: 3px solid crimson;
+                margin-bottom: 100px;
+            }
+        </style>
+        <script type="text/javascript" src="JavaScriptServlet" ></script>
+    </head>
+    <body onload="create()" onblur="removeCookies()">
+        <div>
+            <p id="qnumber" style="height:5px;width: 15px;font-size:200%; "></p>
+        </div>
+        <p style="height:50px;width: 15px;"></p>
+        <div class="relative" style="display:inline;">
+            <p id="question" style="width:200px;">
+                
+            </p>
+        </div>
+        <p style="height:50px;"></p>
+        <div class="relative" style="width:200px" >
+            <form action="#">
+            <input type="radio" name="test" value="Option 1 Value" id="option1"><label id="option1Label"></label>
+            <br>
+            <input type="radio" name="test" value="Option 2 Value" id="option2"><label id="option2Label"></label>
+            <br>
+            <input type="radio" name="test" value="Option 3 Value" id="option3"><label id="option3Label"></label>
+            <br>
+            <input type="radio" name="test" value="Option 4 Value" id="option4"><label id="option4Label"></label>
+            <br>
+            <br>
+            <input type="reset" value="Clear Option">
+        </form>
+        </div>
+        <p></p>
+        <div class="relative" style="display:inline;border-width: 10px">
+            <input type="button" id="prev" onclick="prev()" value="Previous">
+            <!-- <p></p> -->
+            <input type="button" id="next" onclick="next()" value="Next">
+        </div>
+    </body>
 </html>
