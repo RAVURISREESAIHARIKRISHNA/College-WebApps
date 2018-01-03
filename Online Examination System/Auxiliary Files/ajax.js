@@ -125,7 +125,7 @@ function drawPrevQuestion(){
         opt1.innerHTML = options_1[qno-2];
         let opt2 = document.getElementById("option2Label");
         opt2.innerHTML = options_2[qno-2];
-        let opt3 = document.getElementById("option3");
+        let opt3 = document.getElementById("option3Label");
         opt3.innerHTML = options_3[qno-2];
         let opt4 = document.getElementById("option4Label");
         opt4.innerHTML = options_4[qno-2];
