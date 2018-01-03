@@ -13,8 +13,19 @@
             }
         </style>
         <script type="text/javascript" src="JavaScriptServlet" ></script>
+        <script type="text/javascript">
+        let seconds = 120;
+        function drawTime(){
+            let min = Math.floor(seconds/60);
+            let sec = seconds%60;
+            document.getElementById("timer").innerHTML = min + " : " + sec;
+            seconds--;
+        }
+        window.onload = setInterval(drawTime,1000);
+        </script>
     </head>
     <body onload="create()" onblur="removeCookies()">
+    	<h1 id="timer"> </h1>
         <div>
             <p id="qnumber" style="height:5px;width: 15px;font-size:200%; "></p>
         </div>
