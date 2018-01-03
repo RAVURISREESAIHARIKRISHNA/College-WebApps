@@ -176,7 +176,7 @@ public class JavaScriptServlet extends HttpServlet {
 					"        opt1.innerHTML = options_1[qno-2];\r\n" + 
 					"        let opt2 = document.getElementById(\"option2Label\");\r\n" + 
 					"        opt2.innerHTML = options_2[qno-2];\r\n" + 
-					"        let opt3 = document.getElementById(\"option3\");\r\n" + 
+					"        let opt3 = document.getElementById(\"option3Label\");\r\n" + 
 					"        opt3.innerHTML = options_3[qno-2];\r\n" + 
 					"        let opt4 = document.getElementById(\"option4Label\");\r\n" + 
 					"        opt4.innerHTML = options_4[qno-2];\r\n" + 
