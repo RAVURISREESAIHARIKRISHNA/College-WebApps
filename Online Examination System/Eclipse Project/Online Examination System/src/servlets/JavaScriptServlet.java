@@ -8,8 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,9 +22,19 @@ public class JavaScriptServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request , HttpServletResponse response) throws ServletException , IOException{
 		try {
+			RequestDispatcher view = null;
 			Class.forName("oracle.jdbc.OracleDriver");
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "exam", "exam");
 			Statement st = con.createStatement();
+			Cookie cooks[] = request.getCookies();
+			if(cooks == null) {
+				view= request.getRequestDispatcher("/index.html");
+				view.forward(request,response);
+			}
+			if(!(cooks[0].getName().equals("roll"))) {
+				view= request.getRequestDispatcher("/index.html");
+				view.forward(request,response);
+			}
 			String query = "SELECT QUESTION,OPTION1,OPTION2,OPTION3,OPTION4 FROM QUESTIONS";
 			
 			ResultSet rs = st.executeQuery(query);
