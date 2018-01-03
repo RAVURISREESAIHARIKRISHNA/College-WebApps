@@ -5,9 +5,9 @@ function create(){
 }
 function removeCookies(){
     // alert("You are Quiting Exam!!");
-    document.cookie = "roll" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    
-    window.close();
+    // document.cookie = "roll" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    return; 
+    // window.close();
 }
 function draw1Question(){
     let ques = document.getElementById("question");
@@ -136,4 +136,5 @@ function drawPrevQuestion(){
 
 function getRollFromCookie(){
     return Number(document.cookie.substring(document.cookie.indexOf("roll=")+5,document.cookie.length));
+    // return 1;
 }
